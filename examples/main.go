@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
-
 	"github.com/kianooshaz/goliner"
 )
 
 func main() {
+	fmt.Println("Epsilon of machine:", goliner.Epsilon)
+
 	vector := goliner.Vector{1, 2, 4, 5}
 	fmt.Println("Vector :", vector)
 	vector.InsertSorted(3)
@@ -32,4 +33,22 @@ func main() {
 	fmt.Println("Matrix 2:", matrix2)
 	fmt.Println("Dot Matrix Row Major Output: ", matrix1.Dot(matrix2, true))
 	fmt.Println("Dot Matrix Column Major Output: ", matrix1.Dot(matrix2, false))
+
+	fmt.Println("LU Decomposition in place of matrix:")
+	m := goliner.Matrix{
+		goliner.Vector{12, 6, 5},
+		goliner.Vector{7, 4, 2},
+		goliner.Vector{3, 2, 1},
+	}
+
+	for _, r := range m {
+		fmt.Println(r)
+	}
+
+	fmt.Println("answer:")
+
+	m = m.LUDecompositionInPlace(goliner.NonePivot)
+	for _, r := range m {
+		fmt.Println(r)
+	}
 }
