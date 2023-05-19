@@ -39,7 +39,7 @@ func (m Matrix) CholeskyDecomposition() Matrix {
 			if i == j {
 				sum := 0.0
 				for k := 0; k < j; k++ {
-					sum += matrix[i][j] * matrix[i][i]
+					sum += matrix[j][k] * matrix[j][k]
 				}
 				matrix[i][j] = math.Sqrt(m[i][j] - sum)
 			} else {

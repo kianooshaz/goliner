@@ -72,4 +72,16 @@ func main() {
 	backwardSubstitutionAns := backwardMatrix.BackwardSubstitution(goliner.Vector{7.85, -19.3, 71.4})
 	fmt.Println("Answer Backward Substitution: ", backwardSubstitutionAns)
 
+	cholesky := goliner.Matrix{
+		{4, 12, -16},
+		{12, 37, -43},
+		{-16, -43, 98},
+	}
+	fmt.Println("CholeskyDecomposition: ", cholesky)
+	choleskyAns := cholesky.CholeskyDecomposition()
+	fmt.Println("Answer CholeskyDecomposition: ")
+	for _, r := range choleskyAns {
+		fmt.Println(r)
+	}
+	fmt.Println()
 }
